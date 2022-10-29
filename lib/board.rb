@@ -1,5 +1,6 @@
 # forzen_string_literal: true
 
+require_relative 'knight'
 # board class
 class Board
   attr_reader :grid
@@ -38,16 +39,30 @@ class Board
     puts '   a   b   c   d   e   f   g   h'
   end
 
-  def place(piece, row, column)
-    if row > 7 || column > 7
-      puts 'Out of bounds bro!'
+  def player
+    puts 'Choose your piece!'
+    piece = gets.chomp.downcase
+    if piece == 'knight'
+      knight = Knight.new('K')
+      knight.data
     else
-      grid[row][column] = piece
+      puts 'No additional pieces on the block yet'
+      return
     end
   end
+
+  def place(piece)
+    puts 'Choose the row and then the column!'
+    grid[gets.chomp.to_i - 1][gets.chomp.to_i - 1] = piece
+    display
+  end
+
+  def move
+    place(player)
+  end
+
 end
 
 board = Board.new
-board.place('X', 3, 6)
-p board.grid
-p board.display
+
+p board.move
