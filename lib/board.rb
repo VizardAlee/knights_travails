@@ -18,14 +18,4 @@ class Board
     row > grid.length || column > grid.first.length ||
       row.negative? || column.negative?
   end
-  # targets
-  # place pieces
-  # out of bounds
-  # get a piece
 end
-
-b = Board.new
-loc = [4, 4]
-b.place(loc, 'Aliyu')
-p b.grid
-p b.out_of_bounds?([0, 7])
