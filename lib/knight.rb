@@ -1,11 +1,3 @@
 # frozen_string_literal: true
-
-# knight class
-class Knight
-  attr_accessor :data, :position
-
-  def initialize(data, position = nil)
-    @data = data
-    @position = position
-  end
-end
+# Knight's possible moves
+# [2,1],[1,2],[-1,2],[-2,1],[-2,-1],[-1,-2],[1,-2],[2,-1]
